@@ -1,0 +1,66 @@
+---
+title: "2024 Job Fair Recap"
+output: 
+pdf_document:
+---
+
+```{r setup, include=FALSE}
+if (requireNamespace("thematic")) 
+  thematic::thematic_rmd(font = "auto")
+
+source(here::here('Master.R'))
+df2
+```
+
+## Executive Summary
+
+The 2024 Job Fair series, held throughout the year, successfully connected employers with job seekers across various industries. Key highlights include:
+
+Number of Employers: A total of `r sum(df2$employer)` employers participated, offering a wide range of job opportunities.
+
+Number of Job Seekers: The series attracted `r sum(df2$job_seekers)` job seekers, engaging in interviews and networking with potential employers.
+
+Job Offers Extended: `r sum(df2$job_offers` job offers were made during the events, reflecting strong employer interest.
+
+Follow-up Interviews: `r sum(df2$follow_up_interview)` follow-up interviews were scheduled, showing continued interest from employers in qualified candidates.
+
+Overall, the 2024 Job Fair series was a highly effective platform for connecting talent with opportunities, driving job placements and ongoing recruitment.
+
+
+
+ and 
+
+
+## Themed Plots {.tabset .tabset-pills}
+
+When running this document with [`{thematic}`](https://rstudio.github.io/thematic/) installed, the `thematic::thematic_rmd(font = "auto")` effectively translates `theme` (CSS) settings to new global theming defaults for `{ggplot2}`, `{lattice}`, and `{base}` R graphics:
+
+### ggplot2
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+library(ggplot2)
+
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() + geom_smooth()
+```
+
+### lattice
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+lattice::show.settings()
+```
+
+### base
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+plot(pressure, col = thematic::thematic_get_option("accent"))
+```
+
+
+### test
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+source(here::here('Master.r'))
+
+plot(employer)
+```
+

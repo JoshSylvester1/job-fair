@@ -1,0 +1,12 @@
+name: jobfair
+title: jobfair
+username: joshsylvester
+account: joshsylvester
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13685036
+bundleId: 9643758
+url: https://joshsylvester.shinyapps.io/jobfair/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,88 @@
+---
+title: "2024 Job Fair Recap"
+output: 
+ html_document:
+runtime: shiny
+
+---
+
+```{r,include= FALSE, echo=FALSE, warning=FALSE,message=FALSE}
+
+htmltools::img(src = knitr::image_uri("https://lafayette.org/images/site-settings/logo.png"), 
+               alt = 'logo', 
+               style = 'position:absolute; top:0; left:0; padding:10px;')
+
+```
+
+```{r,include = FALSE, echo=FALSE, warning=FALSE,message=FALSE}
+source(here::here('Master.R'))
+df2
+```
+
+## Executive Summary
+
+The 2024 Job Fair series, held throughout the year, successfully connected employers with job seekers across various industries. Key highlights include:
+
+Number of Employers: A total of **`r sum(df2$employer)`** employers participated, offering a wide range of job opportunities.
+
+Number of Job Seekers: The series attracted **`r sum(df2$job_seekers)`** job seekers, engaging in interviews and networking with potential employers.
+
+Job Offers Extended: **`r sum(df2$job_offer)`** job offers were made during the events, reflecting strong employer interest.
+
+Follow-up Interviews: **`r sum(df2$follow_up_interview)`** follow-up interviews were scheduled, showing continued interest from employers in qualified candidates.
+
+Overall, the 2024 Job Fair series was a highly effective platform for connecting talent with opportunities, driving job placements and ongoing recruitment.
+$$\\[1in]$$
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+df3 %>%
+  gt_theme_nytimes() %>%
+  gt_highlight_rows(rows = Event %in% c("LEDA Job Fair"),
+                    fill = "steelblue" )
+
+```
+
+$$\\[1in]$$
+
+
+
+
+
+## Plots {.tabset .tabset-pills}
+
+
+
+### Employers
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+plot(employer)
+```
+
+### Job Seekers
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+plot(jobseeker)
+```
+
+### Job Offers
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+plot(joboffer)
+```
+
+
+### Follow Up
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+source(here::here('Master.r'))
+
+plot(follow_up)
+```
+
+### Pie Chart
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+plot(pie)
+
+
+```
+
