@@ -1,5 +1,6 @@
 rm(list = ls())
 library(tidyverse)
+rsconnect::writeManifest()
 library(gtExtras)
 library(RColorBrewer)
 library(ggrepel)
